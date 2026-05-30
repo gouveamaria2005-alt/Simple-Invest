@@ -3,10 +3,15 @@ const cors = require('cors');
 require('dotenv').config();
 
 const authRoutes = require('./routes/authRoutes');
+const usuarioRoutes = require('./routes/usuarioRoutes');
+const investimentoRoutes = require('./routes/investimentoRoutes');
+
 
 const app = express();
 app.use(cors());
 app.use(express.json());
+app.use('/api/usuario', usuarioRoutes);
+app.use('/api/investimentos', investimentoRoutes);
 
 app.use('/api/auth', authRoutes);
 
