@@ -16,7 +16,10 @@ exports.register = async (req, res) => {
         const hash = await bcrypt.hash(senha, 10);
         await db.query('INSERT INTO usuarios (nome, email, senha) VALUES (?, ?, ?)', [nome, email, hash]);
 
-        res.status(201).json({ mensagem: 'Usuário cadastrado com sucesso!' });
+        res.status(201).json({
+            mensagem: 'Usuário cadastrado com sucesso!',
+            redirect: '/login'
+        });
     } catch (err) {
         res.status(500).json({ erro: 'Erro no servidor.' });
     }
@@ -31,7 +34,7 @@ exports.login = async (req, res) => {
     try {
         const [rows] = await db.query('SELECT * FROM usuarios WHERE email = ?', [email]);
         if (rows.length === 0)
-            return res.status(401).json({ erro: 'Email ou senha incorretos.' });
+            return res.status(401).json({ erro: 'Usuário não encontrado.' });
 
         const usuario = rows[0];
         const senhaValida = await bcrypt.compare(senha, usuario.senha);
