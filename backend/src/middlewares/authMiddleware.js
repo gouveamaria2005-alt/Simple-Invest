@@ -1,5 +1,7 @@
 const jwt = require('jsonwebtoken');
 
+const jwtSecret = process.env.JWT_SECRET || 'simple-invest-dev-secret';
+
 module.exports = (req, res, next) => {
     const authHeader = req.headers['authorization'];
     const token = authHeader && authHeader.split(' ')[1];
@@ -8,7 +10,7 @@ module.exports = (req, res, next) => {
         return res.status(401).json({ erro: 'Token não fornecido.' });
 
     try {
-        const decoded = jwt.verify(token, process.env.JWT_SECRET);
+        const decoded = jwt.verify(token, jwtSecret);
         req.usuario = decoded;
         next();
     } catch {

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notícias | Simple Invest</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+    <header class="app-topbar">
+        <a class="logo" href="dashboard.html"><span>Simple<br>Invest</span></a>
+        <div class="search-top"><i data-lucide="search"></i><input placeholder="Buscar ativos (ex: PETR4, VALE3)"></div>
+        <button class="avatar" title="Abrir perfil">I</button>
+    </header>
+
+    <div class="app-layout">
+        <aside class="sidebar">
+            <a href="dashboard.html"><i data-lucide="layout-dashboard"></i>Dashboard</a>
+            <a href="pesquisar.html"><i data-lucide="search"></i>Pesquisar Ativos</a>
+            <a href="favoritos.html"><i data-lucide="star"></i>Favoritos</a>
+            <a href="carteira.html"><i data-lucide="wallet"></i>Carteira</a>
+            <a href="simulador.html"><i data-lucide="calculator"></i>Simulador</a>
+            <a href="educacao.html"><i data-lucide="book-open"></i>Educação</a>
+            <a class="active" href="noticias.html"><i data-lucide="newspaper"></i>Notícias</a>
+            <a href="ia.html"><i data-lucide="bot"></i>IA Financeira</a>
+            <a href="perfil.html"><i data-lucide="user"></i>Perfil</a>
+
+            <div class="tip">
+                <strong>Dica educativa</strong>
+                <p>As notícias são resumos didáticos para apresentação, não recomendações de investimento.</p>
+            </div>
+        </aside>
+
+        <main class="app-main">
+            <h1>Notícias do Mercado</h1>
+            <p class="muted">Pesquise por empresa, ticker ou tema. Exemplo: Itaú, Apple, Petrobras, inflação.</p>
+
+            <form class="big-search compact-search" id="formNoticias">
+                <i data-lucide="search"></i>
+                <input id="buscaNoticias" placeholder="Pesquisar notícias de uma empresa ou ativo">
+                <button class="btn primary small" type="submit">Buscar</button>
+            </form>
+            <p class="source-note" id="fonteNoticias">Fonte: Yahoo Finance via backend</p>
+
+            <section class="news-grid single" id="listaNoticias"></section>
+        </main>
+    </div>
+
+    <script src="js/script.js"></script>
+    <script>
+        lucide.createIcons();
+        renderNoticias();
+    </script>
+</body>
+
+</html>

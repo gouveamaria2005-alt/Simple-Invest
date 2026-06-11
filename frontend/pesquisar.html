@@ -4,21 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pesquisar Ativos</title>
-
+    <title>Pesquisar Ativos | Simple Invest</title>
     <link rel="stylesheet" href="css/style.css">
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 
 <body>
-
     <header class="app-topbar">
-
-        <a class="logo">
-            <span>
-                Simple<br>
-                Invest
-            </span>
+        <a class="logo" href="dashboard.html">
+            <span>Simple<br>Invest</span>
         </a>
 
         <div class="search-top">
@@ -26,91 +20,54 @@
             <input placeholder="Buscar ativos (ex: PETR4, VALE3)">
         </div>
 
-        <button class="avatar">
-            M
-        </button>
-
+        <button class="avatar" title="Abrir perfil">I</button>
     </header>
 
     <div class="app-layout">
-
         <aside class="sidebar">
-
-            <a href="dashboard.html">
-                <i data-lucide="layout-dashboard"></i>
-                Dashboard
-            </a>
-
-            <a class="active" href="pesquisar.html">
-                <i data-lucide="search"></i>
-                Pesquisar Ativos
-            </a>
-
-            <a href="favoritos.html">
-                <i data-lucide="star"></i>
-                Favoritos
-            </a>
-
-            <a href="perfil.html">
-                <i data-lucide="user"></i>
-                Perfil
-            </a>
+            <a href="dashboard.html"><i data-lucide="layout-dashboard"></i>Dashboard</a>
+            <a class="active" href="pesquisar.html"><i data-lucide="search"></i>Pesquisar Ativos</a>
+            <a href="favoritos.html"><i data-lucide="star"></i>Favoritos</a>
+            <a href="carteira.html"><i data-lucide="wallet"></i>Carteira</a>
+            <a href="simulador.html"><i data-lucide="calculator"></i>Simulador</a>
+            <a href="educacao.html"><i data-lucide="book-open"></i>Educação</a>
+            <a href="noticias.html"><i data-lucide="newspaper"></i>Notícias</a>
+            <a href="ia.html"><i data-lucide="bot"></i>IA Financeira</a>
+            <a href="perfil.html"><i data-lucide="user"></i>Perfil</a>
 
             <div class="tip">
-                <strong>💡 Dica Educativa</strong>
-                <p>
-                    Esta é uma plataforma educacional.
-                    Não realizamos compra ou venda de ativos reais.
-                </p>
+                <strong>Dica educativa</strong>
+                <p>Use a busca para comparar ativos fictícios e entender indicadores básicos.</p>
             </div>
-
         </aside>
 
         <main class="app-main">
-
             <h1>Pesquisar Ativos</h1>
-
-            <p class="muted">
-                Encontre ações, fundos e outros ativos para analisar
-            </p>
+            <p class="muted">Encontre ações, ETFs, renda fixa e outros ativos para análise educacional.</p>
 
             <div class="big-search">
                 <i data-lucide="search"></i>
-
-                <input
-                    id="buscaAtivo"
-                    placeholder="Digite o código ou nome do ativo (ex: PETR4, Petrobras)"
-                >
+                <input id="buscaAtivo" placeholder="Digite o código ou nome do ativo (ex: PETR4, Petrobras)">
             </div>
 
             <div class="filters">
-                <button class="active">Todos</button>
-                <button>Ações</button>
-                <button>Fundos</button>
+                <button class="active" data-filter="todos">Todos</button>
+                <button data-filter="ação">Ações</button>
+                <button data-filter="etf">ETFs</button>
+                <button data-filter="renda fixa">Renda Fixa</button>
             </div>
 
-            <p class="muted">
-                <span id="totalAtivos">8</span>
-                ativos encontrados
-            </p>
-
-            <section
-                class="asset-grid"
-                id="listaAtivos"
-            >
-            </section>
-
+            <p class="muted"><span id="totalAtivos">0</span> ativos encontrados</p>
+            <p class="source-note" id="fonteAtivos">Fonte: base demonstrativa local</p>
+            <section class="asset-grid" id="listaAtivos"></section>
         </main>
-
     </div>
 
     <script src="js/script.js"></script>
-
     <script>
         lucide.createIcons();
         renderPesquisar();
     </script>
-
 </body>
 
 </html>

@@ -5,19 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard | Simple Invest</title>
-
     <link rel="stylesheet" href="css/style.css">
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 
 <body>
-
     <header class="app-topbar">
         <a class="logo" href="dashboard.html">
-            <span>
-                Simple<br>
-                Invest
-            </span>
+            <span>Simple<br>Invest</span>
         </a>
 
         <div class="search-top">
@@ -25,152 +20,120 @@
             <input placeholder="Buscar ativos (ex: PETR4, VALE3)">
         </div>
 
-        <button class="avatar" onclick="location.href='perfil.html'">
-            M
-        </button>
+        <button class="avatar" title="Abrir perfil">I</button>
     </header>
 
     <div class="app-layout">
-
         <aside class="sidebar">
-
-            <a class="active" href="dashboard.html">
-                <i data-lucide="layout-dashboard"></i>
-                Dashboard
-            </a>
-
-            <a href="pesquisar.html">
-                <i data-lucide="search"></i>
-                Pesquisar Ativos
-            </a>
-
-            <a href="favoritos.html">
-                <i data-lucide="star"></i>
-                Favoritos
-            </a>
-
-            <a href="perfil.html">
-                <i data-lucide="user"></i>
-                Perfil
-            </a>
+            <a class="active" href="dashboard.html"><i data-lucide="layout-dashboard"></i>Dashboard</a>
+            <a href="pesquisar.html"><i data-lucide="search"></i>Pesquisar Ativos</a>
+            <a href="favoritos.html"><i data-lucide="star"></i>Favoritos</a>
+            <a href="carteira.html"><i data-lucide="wallet"></i>Carteira</a>
+            <a href="simulador.html"><i data-lucide="calculator"></i>Simulador</a>
+            <a href="educacao.html"><i data-lucide="book-open"></i>Educação</a>
+            <a href="noticias.html"><i data-lucide="newspaper"></i>Notícias</a>
+            <a href="ia.html"><i data-lucide="bot"></i>IA Financeira</a>
+            <a href="perfil.html"><i data-lucide="user"></i>Perfil</a>
 
             <div class="tip">
-                <strong>💡 Dica Educativa</strong>
-                <p>
-                    Esta é uma plataforma educacional.
-                    Não realizamos compra ou venda de ativos reais.
-                </p>
+                <strong>Dica educativa</strong>
+                <p>Esta é uma plataforma educacional. Não realizamos compra ou venda de ativos reais.</p>
             </div>
-
         </aside>
 
         <main class="app-main">
-
             <section class="welcome-banner">
-                <h1>Bem-vindo ao Simple Invest</h1>
-                <p>
-                    Explore o mercado e aprenda sobre investimentos de forma simples
-                </p>
+                <h1 id="dashboardGreeting">Bem-vindo ao Simple Invest</h1>
+                <p>Explore o mercado e aprenda sobre investimentos de forma simples.</p>
             </section>
 
             <h2>Principais Índices</h2>
-
             <section class="index-grid">
-
                 <div class="market-card">
                     <p>Ibovespa</p>
                     <h3>125.483</h3>
                     <span class="up">↗ +1.01%</span>
                 </div>
-
                 <div class="market-card">
                     <p>S&amp;P 500</p>
                     <h3>5.234</h3>
                     <span class="up">↗ +0.47%</span>
                 </div>
-
                 <div class="market-card">
                     <p>Dólar</p>
                     <h3>5,12</h3>
                     <span class="down">↘ -0.58%</span>
                 </div>
-
                 <div class="market-card">
                     <p>Nasdaq</p>
                     <h3>16.420</h3>
                     <span class="up">↗ +0.55%</span>
                 </div>
+            </section>
 
+            <section class="chart-panel">
+                <div>
+                    <h2>Evolução simulada do mercado</h2>
+                    <p class="muted">Referências: ano, valor do índice em mil pontos e número de investidores em milhões.</p>
+                </div>
+                <canvas id="marketChart" aria-label="Gráfico demonstrativo do mercado"></canvas>
+                <div class="chart-legend">
+                    <span><b class="legend-dot green-dot"></b>Valor do índice</span>
+                    <span><b class="legend-dot blue-dot"></b>Número de investidores</span>
+                </div>
             </section>
 
             <section class="quick-grid">
-
                 <a href="pesquisar.html" class="quick-card">
-                    <span class="icon-bg blue-bg">
-                        <i data-lucide="search"></i>
-                    </span>
-
+                    <span class="icon-bg blue-bg"><i data-lucide="search"></i></span>
                     <div>
                         <h3>Pesquisar Ativos</h3>
-                        <p>Encontre ações e fundos</p>
+                        <p>Encontre ações, ETFs e títulos.</p>
                     </div>
                 </a>
 
-                <a href="favoritos.html" class="quick-card">
-                    <span class="icon-bg yellow-bg">
-                        <i data-lucide="star"></i>
-                    </span>
-
+                <a href="simulador.html" class="quick-card">
+                    <span class="icon-bg green-bg"><i data-lucide="calculator"></i></span>
                     <div>
-                        <h3>Meus Favoritos</h3>
-                        <p>2 ativos salvos</p>
+                        <h3>Simulador</h3>
+                        <p>Projete aportes e prazo.</p>
                     </div>
                 </a>
 
-                <a href="#" class="quick-card">
-                    <span class="icon-bg purple-bg">
-                        <i data-lucide="book-open"></i>
-                    </span>
-
+                <a href="educacao.html" class="quick-card">
+                    <span class="icon-bg purple-bg"><i data-lucide="book-open"></i></span>
                     <div>
                         <h3>Aprenda</h3>
-                        <p>Conteúdo educativo</p>
+                        <p>Conceitos em linguagem simples.</p>
                     </div>
                 </a>
-
             </section>
 
             <div class="section-title">
-                <h2>⭐ Favoritos</h2>
+                <h2>★ Favoritos</h2>
                 <a href="favoritos.html">Ver todos</a>
             </div>
-
-            <section class="asset-grid" id="favoritosHome">
-            </section>
+            <section class="asset-grid" id="favoritosHome"></section>
 
             <div class="section-title">
-                <h2>
-                    <i data-lucide="bar-chart-3"></i>
-                    Ativos Populares
-                </h2>
-
+                <h2><i data-lucide="bar-chart-3"></i> Ativos Populares</h2>
                 <a href="pesquisar.html">Ver todos</a>
             </div>
+            <section class="asset-grid" id="popularesHome"></section>
 
-            <section class="asset-grid" id="popularesHome">
-            </section>
-
+            <div class="section-title">
+                <h2><i data-lucide="newspaper"></i> Notícias educativas</h2>
+                <a href="noticias.html">Ver todas</a>
+            </div>
+            <section class="news-grid" id="noticiasHome"></section>
         </main>
-
     </div>
 
     <script src="js/script.js"></script>
-
     <script>
         lucide.createIcons();
         renderDashboard();
     </script>
-
 </body>
 
 </html>

@@ -59,7 +59,21 @@
 
         <span id="mensagem"></span>
 
-        <a class="forgot" href="#">
+        <div class="email-code-box" id="emailValidationBox" hidden>
+            <label>Código enviado por e-mail</label>
+            <div class="input-icon">
+                <i data-lucide="key-round"></i>
+                <input id="codigoEmail" inputmode="numeric" maxlength="6" placeholder="000000">
+            </div>
+            <button class="btn primary full" type="button" id="btnValidarEmail">
+                Validar e-mail
+            </button>
+            <button class="btn secondary full" type="button" id="btnReenviarCodigo">
+                Reenviar código
+            </button>
+        </div>
+
+        <a class="forgot" href="recuperar.html">
             Esqueceu sua senha?
         </a>
 

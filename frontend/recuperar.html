@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recuperar Senha | Simple Invest</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body class="auth-page">
+    <a class="auth-logo" href="index.html">
+        <span>Simple<br>Invest</span>
+    </a>
+
+    <p class="auth-subtitle">Recupere o acesso à sua conta</p>
+
+    <form class="auth-card" id="formRecuperarEmail">
+        <h2>Enviar código</h2>
+        <p>Informe seu e-mail cadastrado para receber um código de recuperação.</p>
+
+        <label>E-mail</label>
+        <div class="input-icon">
+            <i data-lucide="mail"></i>
+            <input id="emailRecuperacao" type="email" placeholder="seu@email.com" required>
+        </div>
+
+        <button class="btn primary full" type="submit">Enviar código</button>
+        <span id="mensagem"></span>
+    </form>
+
+    <form class="auth-card recovery-card" id="formNovaSenha" hidden>
+        <h2>Nova senha</h2>
+        <p>Digite o código recebido e escolha uma nova senha.</p>
+
+        <label>Código</label>
+        <div class="input-icon">
+            <i data-lucide="key-round"></i>
+            <input id="codigoRecuperacao" inputmode="numeric" maxlength="6" placeholder="000000" required>
+        </div>
+
+        <label>Nova senha</label>
+        <div class="input-icon">
+            <i data-lucide="lock"></i>
+            <input id="novaSenha" type="password" placeholder="Mínimo 6 caracteres" required>
+        </div>
+
+        <button class="btn primary full" type="submit">Redefinir senha</button>
+    </form>
+
+    <p class="auth-link">
+        <a href="login.html">Voltar para login</a>
+    </p>
+
+    <script src="js/script.js"></script>
+    <script>
+        lucide.createIcons();
+        renderRecuperarSenha();
+    </script>
+</body>
+
+</html>

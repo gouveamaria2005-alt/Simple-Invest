@@ -1,5 +1,4 @@
 const db = require('../config/db');
-const bcrypt = require('bcryptjs');
 
 exports.getPerfil = async (req, res) => {
     try {
@@ -11,7 +10,8 @@ exports.getPerfil = async (req, res) => {
             return res.status(404).json({ erro: 'Usuário não encontrado.' });
 
         res.json(rows[0]);
-    } catch {
+    } catch (err) {
+        console.error(err);
         res.status(500).json({ erro: 'Erro no servidor.' });
     }
 };
@@ -24,7 +24,8 @@ exports.updatePerfil = async (req, res) => {
             [nome, telefone, foto, req.usuario.id]
         );
         res.json({ mensagem: 'Perfil atualizado com sucesso!' });
-    } catch {
+    } catch (err) {
+        console.error(err);
         res.status(500).json({ erro: 'Erro no servidor.' });
     }
 };
@@ -33,7 +34,8 @@ exports.deletePerfil = async (req, res) => {
     try {
         await db.query('DELETE FROM usuarios WHERE id = ?', [req.usuario.id]);
         res.json({ mensagem: 'Conta deletada com sucesso.' });
-    } catch {
+    } catch (err) {
+        console.error(err);
         res.status(500).json({ erro: 'Erro no servidor.' });
     }
 };

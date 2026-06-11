@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carteira | Simple Invest</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+    <header class="app-topbar">
+        <a class="logo" href="dashboard.html"><span>Simple<br>Invest</span></a>
+        <div class="search-top"><i data-lucide="search"></i><input placeholder="Buscar ativos (ex: PETR4, VALE3)"></div>
+        <button class="avatar" title="Abrir perfil">I</button>
+    </header>
+
+    <div class="app-layout">
+        <aside class="sidebar">
+            <a href="dashboard.html"><i data-lucide="layout-dashboard"></i>Dashboard</a>
+            <a href="pesquisar.html"><i data-lucide="search"></i>Pesquisar Ativos</a>
+            <a href="favoritos.html"><i data-lucide="star"></i>Favoritos</a>
+            <a class="active" href="carteira.html"><i data-lucide="wallet"></i>Carteira</a>
+            <a href="simulador.html"><i data-lucide="calculator"></i>Simulador</a>
+            <a href="educacao.html"><i data-lucide="book-open"></i>Educação</a>
+            <a href="noticias.html"><i data-lucide="newspaper"></i>Notícias</a>
+            <a href="ia.html"><i data-lucide="bot"></i>IA Financeira</a>
+            <a href="perfil.html"><i data-lucide="user"></i>Perfil</a>
+
+            <div class="tip">
+                <strong>Dica educativa</strong>
+                <p>Carteira demonstra CRUD: cadastrar, listar e excluir investimentos do usuário logado.</p>
+            </div>
+        </aside>
+
+        <main class="app-main simulator-main">
+            <div>
+                <h1>Minha Carteira</h1>
+                <p class="muted">Cadastro educacional de investimentos integrado com a API.</p>
+
+                <form class="tool-card" id="formInvestimento">
+                    <label>Tipo de investimento</label>
+                    <select id="tipoInvestimento" required>
+                        <option value="CDB">CDB</option>
+                        <option value="Tesouro Direto">Tesouro Direto</option>
+                        <option value="Ação">Ação</option>
+                        <option value="ETF">ETF</option>
+                        <option value="Debênture">Debênture</option>
+                    </select>
+
+                    <label>Valor aplicado</label>
+                    <input id="valorInvestimento" type="number" min="1" step="0.01" required>
+
+                    <label>Data de início</label>
+                    <input id="dataInvestimento" type="date" required>
+
+                    <label>Descrição</label>
+                    <textarea id="descricaoInvestimento" rows="3" placeholder="Ex: objetivo, instituição ou observação"></textarea>
+
+                    <button class="btn primary full" type="submit"><i data-lucide="plus"></i>Cadastrar</button>
+                    <span id="mensagem"></span>
+                </form>
+            </div>
+
+            <aside class="profile-card wallet-panel">
+                <p class="muted">Total cadastrado</p>
+                <h2 id="totalCarteira">R$ 0,00</h2>
+                <div class="investment-list" id="listaInvestimentos"></div>
+            </aside>
+        </main>
+    </div>
+
+    <script src="js/script.js"></script>
+    <script>
+        lucide.createIcons();
+        renderCarteira();
+    </script>
+</body>
+
+</html>

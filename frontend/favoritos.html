@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favoritos | Simple Invest</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+    <header class="app-topbar">
+        <a class="logo" href="dashboard.html"><span>Simple<br>Invest</span></a>
+        <div class="search-top"><i data-lucide="search"></i><input placeholder="Buscar ativos (ex: PETR4, VALE3)"></div>
+        <button class="avatar" title="Abrir perfil">I</button>
+    </header>
+
+    <div class="app-layout">
+        <aside class="sidebar">
+            <a href="dashboard.html"><i data-lucide="layout-dashboard"></i>Dashboard</a>
+            <a href="pesquisar.html"><i data-lucide="search"></i>Pesquisar Ativos</a>
+            <a class="active" href="favoritos.html"><i data-lucide="star"></i>Favoritos</a>
+            <a href="carteira.html"><i data-lucide="wallet"></i>Carteira</a>
+            <a href="simulador.html"><i data-lucide="calculator"></i>Simulador</a>
+            <a href="educacao.html"><i data-lucide="book-open"></i>Educação</a>
+            <a href="noticias.html"><i data-lucide="newspaper"></i>Notícias</a>
+            <a href="ia.html"><i data-lucide="bot"></i>IA Financeira</a>
+            <a href="perfil.html"><i data-lucide="user"></i>Perfil</a>
+
+            <div class="tip">
+                <strong>Dica educativa</strong>
+                <p>Favoritos ajudam o usuário a acompanhar ativos de interesse sem misturar com operações reais.</p>
+            </div>
+        </aside>
+
+        <main class="app-main">
+            <div class="page-head">
+                <div>
+                    <h1>Meus Favoritos</h1>
+                    <p class="muted">Ativos marcados como exemplos de acompanhamento.</p>
+                </div>
+                <a class="btn secondary small" href="pesquisar.html"><i data-lucide="search"></i>Pesquisar</a>
+            </div>
+
+            <section class="asset-grid" id="listaFavoritos"></section>
+        </main>
+    </div>
+
+    <script src="js/script.js"></script>
+    <script>
+        lucide.createIcons();
+        renderFavoritos();
+    </script>
+</body>
+
+</html>
