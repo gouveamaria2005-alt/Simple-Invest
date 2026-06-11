@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+
+    <header class="app-topbar">
+        <a class="logo">
+            <span>
+                Simple<br>
+                Invest
+            </span>
+        </a>
+
+        <div class="search-top">
+            <i data-lucide="search"></i>
+            <input placeholder="Buscar ativos (ex: PETR4, VALE3)">
+        </div>
+
+        <button class="avatar">M</button>
+    </header>
+
+    <div class="app-layout">
+
+        <aside class="sidebar">
+
+            <a href="dashboard.html">
+                <i data-lucide="layout-dashboard"></i>
+                Dashboard
+            </a>
+
+            <a href="pesquisar.html">
+                <i data-lucide="search"></i>
+                Pesquisar Ativos
+            </a>
+
+            <a href="favoritos.html">
+                <i data-lucide="star"></i>
+                Favoritos
+            </a>
+
+            <a class="active" href="perfil.html">
+                <i data-lucide="user"></i>
+                Perfil
+            </a>
+
+            <div class="tip">
+                <strong>💡 Dica Educativa</strong>
+                <p>
+                    Esta é uma plataforma educacional.
+                    Não realizamos compra ou venda de ativos reais.
+                </p>
+            </div>
+
+        </aside>
+
+        <main class="app-main profile-main">
+
+            <div>
+
+                <h1>Meu Perfil</h1>
+                <p class="muted">
+                    Gerencie suas informações e preferências
+                </p>
+
+                <section class="profile-card">
+
+                    <h3>Informações Pessoais</h3>
+                    <p>Atualize seus dados cadastrais</p>
+
+                    <div class="profile-user">
+
+                        <div class="avatar big">
+                            M
+                        </div>
+
+                        <div>
+                            <h2 id="perfilNome">
+                                Maria Eduarda Gouvea
+                            </h2>
+
+                            <p id="perfilEmail">
+                                maria@123
+                            </p>
+
+                            <span>
+                                Investidor Iniciante
+                            </span>
+                        </div>
+
+                    </div>
+
+                    <hr>
+
+                    <label>Nome Completo</label>
+
+                    <div class="input-icon disabled">
+                        <i data-lucide="user"></i>
+
+                        <input
+                            id="nomePerfil"
+                            disabled
+                            value="Maria Eduarda Gouvea"
+                        >
+                    </div>
+
+                    <label>E-mail</label>
+
+                    <div class="input-icon disabled">
+                        <i data-lucide="mail"></i>
+
+                        <input
+                            id="emailPerfil"
+                            disabled
+                            value="maria@123"
+                        >
+                    </div>
+
+                    <button
+                        class="btn primary small"
+                        id="btnEditarPerfil"
+                    >
+                        Editar Perfil
+                    </button>
+
+                </section>
+
+                <section class="profile-card">
+
+                    <h3>Segurança</h3>
+                    <p>Altere sua senha e configure a segurança</p>
+
+                    <div class="security-row">
+
+                        <i data-lucide="lock"></i>
+
+                        <div>
+                            <strong>Senha</strong>
+                            <p>••••••••</p>
+                        </div>
+
+                        <button class="btn secondary small">
+                            Alterar
+                        </button>
+
+                    </div>
+
+                </section>
+
+                <section class="danger-card">
+
+                    <h3>Zona de Perigo</h3>
+                    <p>Ações irreversíveis</p>
+
+                    <button
+                        class="btn danger small"
+                        onclick="deletarConta()"
+                    >
+                        <i data-lucide="log-out"></i>
+                        Sair da Conta
+                    </button>
+
+                </section>
+
+            </div>
+
+            <aside class="profile-side">
+
+                <section class="profile-card">
+
+                    <h3>☆ Favoritos (2)</h3>
+
+                    <div class="mini-asset">
+                        <strong>PETR4</strong>
+                        <p>Petrobras PN</p>
+                        <span>Ação</span>
+                    </div>
+
+                    <div class="mini-asset">
+                        <strong>ITUB4</strong>
+                        <p>Itaú Unibanco PN</p>
+                        <span>Ação</span>
+                    </div>
+
+                    <a
+                        class="btn secondary full"
+                        href="favoritos.html"
+                    >
+                        Ver todos
+                    </a>
+
+                </section>
+
+                <section class="profile-card">
+
+                    <h3>
+                        <i data-lucide="history"></i>
+                        Pesquisas Recentes
+                    </h3>
+
+                    <div class="recent">
+                        <strong>PETR4</strong>
+                        <p>
+                            Petrobras PN<br>
+                            Hoje, 14:30
+                        </p>
+                    </div>
+
+                    <div class="recent">
+                        <strong>ITUB4</strong>
+                        <p>
+                            Itaú Unibanco PN<br>
+                            Hoje, 13:15
+                        </p>
+                    </div>
+
+                    <div class="recent">
+                        <strong>IVVB11</strong>
+                        <p>
+                            iShares S&P 500<br>
+                            Ontem, 16:45
+                        </p>
+                    </div>
+
+                </section>
+
+            </aside>
+
+        </main>
+
+    </div>
+
+    <script src="js/script.js"></script>
+
+    <script>
+        lucide.createIcons();
+        carregarPerfil();
+    </script>
+
+</body>
+
+</html>

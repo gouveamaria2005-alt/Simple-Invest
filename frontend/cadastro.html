@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar Conta | Simple Invest</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body class="auth-page">
+
+    <a class="auth-logo" href="index.html">
+        <span>
+            Simple<br>
+            Invest
+        </span>
+    </a>
+
+    <p class="auth-subtitle">
+        Crie sua conta e comece a aprender
+    </p>
+
+    <form class="auth-card" id="formCadastro">
+
+        <h2>Criar Conta</h2>
+
+        <p>
+            Preencha os dados abaixo para começar sua jornada de investimentos
+        </p>
+
+        <label>Nome Completo</label>
+        <div class="input-icon">
+            <i data-lucide="user"></i>
+            <input
+                id="nome"
+                type="text"
+                placeholder="Seu nome"
+                required
+            >
+        </div>
+
+        <label>E-mail</label>
+        <div class="input-icon">
+            <i data-lucide="mail"></i>
+            <input
+                id="email"
+                type="email"
+                placeholder="seu@email.com"
+                required
+            >
+        </div>
+
+        <label>Senha</label>
+        <div class="input-icon">
+            <i data-lucide="lock"></i>
+            <input
+                id="senha"
+                type="password"
+                placeholder="Mínimo 6 caracteres"
+                required
+            >
+        </div>
+
+        <label>Confirmar Senha</label>
+        <div class="input-icon">
+            <i data-lucide="lock"></i>
+            <input
+                id="confirmarSenha"
+                type="password"
+                placeholder="Digite a senha novamente"
+                required
+            >
+        </div>
+
+        <button class="btn primary full" type="submit">
+            Cadastrar
+        </button>
+
+        <span id="mensagem"></span>
+
+        <p class="auth-link">
+            Já possui conta?
+            <a href="login.html">Fazer login</a>
+        </p>
+
+    </form>
+
+    <script src="js/script.js"></script>
+
+    <script>
+        lucide.createIcons();
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pesquisar Ativos</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+
+    <header class="app-topbar">
+
+        <a class="logo">
+            <span>
+                Simple<br>
+                Invest
+            </span>
+        </a>
+
+        <div class="search-top">
+            <i data-lucide="search"></i>
+            <input placeholder="Buscar ativos (ex: PETR4, VALE3)">
+        </div>
+
+        <button class="avatar">
+            M
+        </button>
+
+    </header>
+
+    <div class="app-layout">
+
+        <aside class="sidebar">
+
+            <a href="dashboard.html">
+                <i data-lucide="layout-dashboard"></i>
+                Dashboard
+            </a>
+
+            <a class="active" href="pesquisar.html">
+                <i data-lucide="search"></i>
+                Pesquisar Ativos
+            </a>
+
+            <a href="favoritos.html">
+                <i data-lucide="star"></i>
+                Favoritos
+            </a>
+
+            <a href="perfil.html">
+                <i data-lucide="user"></i>
+                Perfil
+            </a>
+
+            <div class="tip">
+                <strong>💡 Dica Educativa</strong>
+                <p>
+                    Esta é uma plataforma educacional.
+                    Não realizamos compra ou venda de ativos reais.
+                </p>
+            </div>
+
+        </aside>
+
+        <main class="app-main">
+
+            <h1>Pesquisar Ativos</h1>
+
+            <p class="muted">
+                Encontre ações, fundos e outros ativos para analisar
+            </p>
+
+            <div class="big-search">
+                <i data-lucide="search"></i>
+
+                <input
+                    id="buscaAtivo"
+                    placeholder="Digite o código ou nome do ativo (ex: PETR4, Petrobras)"
+                >
+            </div>
+
+            <div class="filters">
+                <button class="active">Todos</button>
+                <button>Ações</button>
+                <button>Fundos</button>
+            </div>
+
+            <p class="muted">
+                <span id="totalAtivos">8</span>
+                ativos encontrados
+            </p>
+
+            <section
+                class="asset-grid"
+                id="listaAtivos"
+            >
+            </section>
+
+        </main>
+
+    </div>
+
+    <script src="js/script.js"></script>
+
+    <script>
+        lucide.createIcons();
+        renderPesquisar();
+    </script>
+
+</body>
+
+</html>

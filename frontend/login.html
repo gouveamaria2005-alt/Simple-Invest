@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Simple Invest</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body class="auth-page">
+
+    <a class="auth-logo" href="index.html">
+        <span>
+            Simple<br>
+            Invest
+        </span>
+    </a>
+
+    <p class="auth-subtitle">
+        Entre na sua conta
+    </p>
+
+    <form class="auth-card" id="formLogin">
+
+        <h2>Login</h2>
+
+        <p>
+            Acesse sua conta para continuar aprendendo sobre investimentos
+        </p>
+
+        <label>E-mail</label>
+        <div class="input-icon">
+            <i data-lucide="mail"></i>
+            <input
+                id="email"
+                type="email"
+                placeholder="seu@email.com"
+                required
+            >
+        </div>
+
+        <label>Senha</label>
+        <div class="input-icon">
+            <i data-lucide="lock"></i>
+            <input
+                id="senha"
+                type="password"
+                placeholder="Sua senha"
+                required
+            >
+        </div>
+
+        <button class="btn primary full" type="submit">
+            Entrar
+        </button>
+
+        <span id="mensagem"></span>
+
+        <a class="forgot" href="#">
+            Esqueceu sua senha?
+        </a>
+
+        <div class="divider">
+            <span>OU</span>
+        </div>
+
+        <p class="auth-link">
+            Não tem uma conta?
+            <a href="cadastro.html">Criar conta</a>
+        </p>
+
+    </form>
+
+    <small class="educational">
+        Plataforma educacional - Não realizamos compra ou venda de ativos
+    </small>
+
+    <script src="js/script.js"></script>
+
+    <script>
+        lucide.createIcons();
+    </script>
+
+</body>
+
+</html>
