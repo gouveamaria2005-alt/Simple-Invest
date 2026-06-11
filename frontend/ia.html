@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IA Financeira | Simple Invest</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+    <header class="app-topbar">
+        <a class="logo" href="dashboard.html"><span>Simple<br>Invest</span></a>
+        <div class="search-top"><i data-lucide="search"></i><input placeholder="Buscar ativos (ex: PETR4, AAPL)"></div>
+        <button class="avatar" title="Abrir perfil">I</button>
+    </header>
+
+    <div class="app-layout">
+        <aside class="sidebar">
+            <a href="dashboard.html"><i data-lucide="layout-dashboard"></i>Dashboard</a>
+            <a href="pesquisar.html"><i data-lucide="search"></i>Pesquisar Ativos</a>
+            <a href="favoritos.html"><i data-lucide="star"></i>Favoritos</a>
+            <a href="carteira.html"><i data-lucide="wallet"></i>Carteira</a>
+            <a href="simulador.html"><i data-lucide="calculator"></i>Simulador</a>
+            <a href="educacao.html"><i data-lucide="book-open"></i>Educação</a>
+            <a href="noticias.html"><i data-lucide="newspaper"></i>Notícias</a>
+            <a class="active" href="ia.html"><i data-lucide="bot"></i>IA Financeira</a>
+            <a href="perfil.html"><i data-lucide="user"></i>Perfil</a>
+        </aside>
+
+        <main class="app-main">
+            <h1>IA Financeira</h1>
+            <p class="muted">Tire dúvidas sobre mercado financeiro, renda fixa, bolsa, ações, fundos, risco e conceitos de investimento.</p>
+
+            <form class="ai-panel" id="formIA">
+                <textarea id="perguntaIA" rows="5" placeholder="Ex: O que significa liquidar um ativo? Vale a pena comprar ação só por dividendos?"></textarea>
+                <button class="btn primary" type="submit"><i data-lucide="send"></i>Perguntar</button>
+            </form>
+
+            <section class="ai-answer" id="respostaIA">
+                <p class="muted">A resposta aparecerá aqui.</p>
+            </section>
+        </main>
+    </div>
+
+    <script src="js/script.js"></script>
+    <script>
+        lucide.createIcons();
+        renderIA();
+    </script>
+</body>
+
+</html>

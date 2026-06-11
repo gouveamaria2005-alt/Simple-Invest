@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador | Simple Invest</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+    <header class="app-topbar">
+        <a class="logo" href="dashboard.html"><span>Simple<br>Invest</span></a>
+        <div class="search-top"><i data-lucide="search"></i><input placeholder="Buscar ativos (ex: PETR4, VALE3)"></div>
+        <button class="avatar" title="Abrir perfil">I</button>
+    </header>
+
+    <div class="app-layout">
+        <aside class="sidebar">
+            <a href="dashboard.html"><i data-lucide="layout-dashboard"></i>Dashboard</a>
+            <a href="pesquisar.html"><i data-lucide="search"></i>Pesquisar Ativos</a>
+            <a href="favoritos.html"><i data-lucide="star"></i>Favoritos</a>
+            <a href="carteira.html"><i data-lucide="wallet"></i>Carteira</a>
+            <a class="active" href="simulador.html"><i data-lucide="calculator"></i>Simulador</a>
+            <a href="educacao.html"><i data-lucide="book-open"></i>Educação</a>
+            <a href="noticias.html"><i data-lucide="newspaper"></i>Notícias</a>
+            <a href="ia.html"><i data-lucide="bot"></i>IA Financeira</a>
+            <a href="perfil.html"><i data-lucide="user"></i>Perfil</a>
+
+            <div class="tip">
+                <strong>Dica educativa</strong>
+                <p>A simulação é uma projeção didática, não uma promessa de rentabilidade.</p>
+            </div>
+        </aside>
+
+        <main class="app-main simulator-main">
+            <div>
+                <h1>Simulador de Investimentos</h1>
+                <p class="muted">Calcule uma projeção simples com aporte inicial, aporte mensal, prazo e taxa anual estimada.</p>
+
+                <form class="tool-card" id="formSimulador">
+                    <label>Valor inicial</label>
+                    <input id="valorInicial" type="number" min="0" step="50" value="1000">
+
+                    <label>Aporte mensal</label>
+                    <input id="aporteMensal" type="number" min="0" step="50" value="300">
+
+                    <label>Taxa anual estimada (%)</label>
+                    <input id="taxaAnual" type="number" min="0" step="0.1" value="10">
+
+                    <label>Período em meses</label>
+                    <input id="periodoMeses" type="number" min="1" step="1" value="24">
+
+                    <button class="btn primary full" type="submit"><i data-lucide="calculator"></i>Calcular</button>
+                </form>
+            </div>
+
+            <aside class="chart-panel simulator-panel">
+                <div>
+                    <h2>Resultado da simulação</h2>
+                    <p class="muted">Valores aproximados para fins educacionais.</p>
+                </div>
+                <div class="result-grid" id="resultadoSimulador"></div>
+                <canvas id="simuladorChart" aria-label="Gráfico da simulação"></canvas>
+            </aside>
+        </main>
+    </div>
+
+    <script src="js/script.js"></script>
+    <script>
+        lucide.createIcons();
+        renderSimulador();
+    </script>
+</body>
+
+</html>
