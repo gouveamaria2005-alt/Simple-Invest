@@ -1,0 +1,16 @@
+{
+  "name": "simple-invest",
+  "version": "1.0.0",
+  "description": "Simple Invest - backend Express servindo frontend estático.",
+  "private": true,
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "postinstall": "npm install --prefix backend",
+    "setup": "npm install --prefix backend",
+    "start": "node backend/src/app.js",
+    "dev": "node backend/src/app.js",
+    "check": "npm --prefix backend run check"
+  }
+}
