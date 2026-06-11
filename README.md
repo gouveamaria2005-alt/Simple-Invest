@@ -84,3 +84,5 @@ O protótipo apresenta telas como:
 ## Conclusão
 
 O Simple Invest busca tornar a análise de investimentos mais acessível, integrando dados em tempo real, notícias relevantes, sistema educativo e interface intuitiva.
+
+## Link https://www.youtube.com/watch?v=6uYVawkcSxs
